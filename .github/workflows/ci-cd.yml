@@ -1,0 +1,28 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Build and Push Docker Images
+      run: |
+        docker build -t my-frontend-image ./applications/FrontEndApplication
+        docker build -t my-matchedcountries-image ./applications/MatchedCountriesApplication
+        docker build -t my-downloadfile-image ./applications/DownloadFileApplication
+        echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+        docker push my-frontend-image
+        docker push my-matchedcountries-image
+        docker push my-downloadfile-image
+
+    - name: Deploy with Docker Compose
+      run: |
+        docker-compose -f docker-compose.yml up -d

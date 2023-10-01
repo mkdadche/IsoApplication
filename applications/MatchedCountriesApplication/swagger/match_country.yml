@@ -1,0 +1,23 @@
+parameters:
+  - name: requestBody
+    in: body
+    required: true
+    description: JSON request body ("countries" should be a list of strings and the "iso" should be a string)
+    schema:
+      type: object
+      properties:
+        iso:
+          type: string
+        countries:
+          type: array
+          items:
+            type: string
+responses:
+  200:
+    description: List of matched countries
+    schema:
+      type: array
+      items:
+        type: string
+  400:
+    description: Invalid request

@@ -1,0 +1,22 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./applications/FrontEndApplication
+    ports:
+      - "4000:4000"
+    depends_on:
+      - matchedcountries
+      - downloadfile
+
+  matchedcountries:
+    build:
+      context: ./applications/MatchedCountriesApplication
+    ports:
+      - "4001:4001"
+
+  downloadfile:
+    build:
+      context: ./applications/DownloadFileApplication
+    ports:
+      - "4002:4002"
