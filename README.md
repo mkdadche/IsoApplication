@@ -24,4 +24,4 @@ If you prefer to set up the microservices manually, you can do so by following t
 * [Matched Countries service](https://github.com/mkdadche/IsoApplication/tree/main/applications/MatchedCountriesApplication)
 * [Download File service](https://github.com/mkdadche/IsoApplication/tree/main/applications/DownloadFileApplication)
 
-## **Each application has README file provides detailed instructions on how to set up and run the respective service. Additionally, you will find test scenarios specified in these README files for the Matched Countries and Download File services.**
+## **Each application has README file provides detailed instructions on how to set up and run the respective service. Additionally, you will find test scenarios specified in these README files for the Matched Countries and Download File services.** 
