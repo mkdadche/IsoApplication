@@ -13,19 +13,17 @@ jobs:
       ACTIONS_STEP_DEBUG: true
 
     steps:
-    - name: Use Node.js 16
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
 
     - name: Checkout Repository
       uses: actions/checkout@v2
-
-    - name: Set up Node.js 16 for Build
+    - name: Initialize Python '3.11'
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    - name: Install dependencies
       run: |
-        docker run --rm -e NODE_VERSION=16 -v ${{ github.workspace }}:/github/workspace -w /github/workspace node:16 yarn install
-      shell: bash
-
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt     
     - name: Build and Push Docker Images
       run: |
         docker build -t my-frontend-image ./applications/FrontEndApplication
@@ -35,11 +33,6 @@ jobs:
         docker push my-frontend-image
         docker push my-matchedcountries-image
         docker push my-downloadfile-image
-
-    - name: Set up Node.js 16 for Deploy
-      run: |
-        docker run --rm -e NODE_VERSION=16 -v ${{ github.workspace }}:/github/workspace -w /github/workspace node:16 yarn install
-      shell: bash
 
     - name: Deploy with Docker Compose
       run: |
