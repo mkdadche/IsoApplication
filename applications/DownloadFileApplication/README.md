@@ -5,8 +5,8 @@ This application is used to download the result for the users.
 
 To make the applictaion fully running, make sure the following two microservices are up and running:
 
-* [FrontEndApplication](https://github.com/mkdadche/FrontEndApplication)
-* [MatchedCountriesApplication](https://github.com/mkdadche/MatchedCountriesApplication)
+* [FrontEndApplication](https://github.com/mkdadche/IsoApplication/tree/main/applications/FrontEndApplication)
+* [MatchedCountriesApplication](https://github.com/mkdadche/IsoApplication/tree/main/applications/MatchedCountriesApplication)
 
 # Steps to run the application
 ## Running without Docker

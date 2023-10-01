@@ -5,8 +5,8 @@ This application is the used to pull the ISO code of the given countries from th
 
 To make the applictaion fully running, make sure the following two microservices are up and running:
 
-* [FrontEndApplication](https://github.com/mkdadche/FrontEndApplication)
-* [DownloadFile application](https://github.com/mkdadche/DownloadFileApplication)
+* [FrontEndApplication](https://github.com/mkdadche/IsoApplication/tree/main/applications/FrontEndApplication)
+* [DownloadFile application](https://github.com/mkdadche/IsoApplication/tree/main/applications/DownloadFileApplication)
 
 # Steps to run the application
 ## Running without Docker

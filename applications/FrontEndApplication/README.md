@@ -5,8 +5,8 @@ This application is the user interface of the ISO code application
 
 Before running the FrontEndApplication, make sure the following two microservices are up and running:
 
-* [Matched Country service application](https://github.com/mkdadche/MatchedCountriesApplication)
-* [DownloadFile application](https://github.com/mkdadche/DownloadFileApplication)
+* [Matched Country service application](https://github.com/mkdadche/IsoApplication/tree/main/applications/MatchedCountriesApplication)
+* [DownloadFile application](https://github.com/mkdadche/IsoApplication/tree/main/applications/DownloadFileApplication)
 
 # Steps to run the application
 ## Running without Docker
